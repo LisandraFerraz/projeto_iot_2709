@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="navbar-consulta">
+  </div>
+</div>
+
+<div class="container">
+  <div>
+    <h5 class="page-title">PROJETO IOT - SENSOR DE TEMPERATURA</h5>
+    <form method="post" action="/cadastrar" id="form" name="form">
+      <div class="form-group">
+        <label class="form-label" for="umidade">Umidade:</label>
+        <input
+          type="number"
+          maxlength="3"
+          class="form-input"
+          name="umidade"
+          required
+          id="umidade"
+          placeholder="Informe um valor. Ex.: 90%"
+        />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="temperatura">Temperatura:</label>
+        <input
+          maxlength="3"
+          type="number"
+          class="form-input"
+          required
+          name="temperatura"
+          id="temperatura"
+          placeholder="Informe um valor. Ex.: 33ºC"
+        />
+      </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          id="btnInserir"
+          class="btn-form"
+        >Cadastrar</button>
+      </div>
+    </form>
+
+    <div class="table-dados">
+      <p class="page-subtitle">Dados Cadastrados</p>
+      <table>
+        <thead>
+          <tr>
+            <td>Umidade</td>
+            <td>Temperatura</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each post}}
+            {{#dataValues}}
+              <tr>
+                <td>{{umidade}}%</td>
+                <td>{{temperatura}}ºC</td>
+              </tr>
+            {{/dataValues}}
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{! <img src="images/testE_background.png" alt="" /> }}
+</div>
